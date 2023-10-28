@@ -1,0 +1,41 @@
+
+<div [formGroup]="serverForm">
+<label Server Name></label>
+  <input
+    type="text"
+    class="form-control"
+    formControlName="serverName"
+    [(ngModel)]="serverName"
+    (change)="onChange($event)"
+  >
+  <div class="container">
+    <h3>{{serverName}}</h3>
+  </div>
+  <label Server Id></label>
+  <input
+    type="text"
+    class="form-control"
+    formControlName="serverId"
+    [(ngModel)] = "serverId"
+    (input)="onUpdateServerId($event)"
+  >
+  <div class="container">
+    <h3>{{serverId}}</h3>
+  </div>
+</div>
+<button
+  class="btn btn-primary btn-white icon-button"
+  [disabled]="!allowNewServer"
+  (click)="disableServerAddition()">
+  <span class="reuploadText noCursor">Add Server</span>
+</button>
+<p [innerText]="allowNewServer"></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>This is my first component{{value}}</h3>
+      <p>Inside Component</p>
+    </div>
+  </div>
+</div>
